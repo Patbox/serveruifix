@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "serveruifix",
+  "version": "${version}",
+
+  "name": "Server UI Fix",
+  "description": "Replaces some UI's to make them work better on heavily modded servers targeting vanilla clients",
+  "authors": [
+    "Patbox"
+  ],
+  "contact": {
+    "homepage": "https://pb4.eu",
+    "sources": "https://github.com/Patbox/serveruifix"
+  },
+
+  "license": "LGPLv3",
+  "_icon": "assets/serveruifix/textures/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "eu.pb4.serveruifix.ModInit"
+    ],
+    "fabric-datagen": [
+      "eu.pb4.serveruifix.datagen.DataGenInit"
+    ]
+  },
+  "mixins": [
+    "serveruifix.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "minecraft": ">=1.20.3-",
+    "polymer-resource-pack": ">=0.7.0",
+    "java": ">=17"
+  },
+  "breaks": {
+    "banner": "*",
+    "cardboard": "*"
+  }
+}
