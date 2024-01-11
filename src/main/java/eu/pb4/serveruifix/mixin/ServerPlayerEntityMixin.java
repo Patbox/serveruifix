@@ -2,8 +2,10 @@ package eu.pb4.serveruifix.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import eu.pb4.serveruifix.ModInit;
+import eu.pb4.serveruifix.ui.EnchantmentGui;
 import eu.pb4.serveruifix.ui.StonecutterGui;
 import net.minecraft.item.Items;
+import net.minecraft.screen.EnchantmentScreenHandler;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.StonecutterScreenHandler;
@@ -22,6 +24,8 @@ public class ServerPlayerEntityMixin {
         var player = (ServerPlayerEntity) (Object) this;
         if (handler instanceof StonecutterScreenHandler screenHandler && !(ModInit.DEV_MODE && player.getMainHandStack().isOf(Items.DEBUG_STICK)) ) {
             cir.setReturnValue(new StonecutterGui(factory.getDisplayName(), screenHandler, player).openWithNumber());
+        } else if (ModInit.DEV_MODE && handler instanceof EnchantmentScreenHandler screenHandler && !(ModInit.DEV_MODE && player.getMainHandStack().isOf(Items.DEBUG_STICK)) ) {
+            cir.setReturnValue(new EnchantmentGui(factory.getDisplayName(), screenHandler, player).openWithNumber());
         }
     }
 }

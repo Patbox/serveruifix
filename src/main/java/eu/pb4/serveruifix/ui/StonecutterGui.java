@@ -4,6 +4,7 @@ import eu.pb4.serveruifix.mixin.StonecutterScreenHandlerAccessor;
 import eu.pb4.serveruifix.polydex.PolydexCompat;
 import eu.pb4.serveruifix.util.GuiTextures;
 import eu.pb4.serveruifix.util.GuiUtils;
+import eu.pb4.serveruifix.util.UiResourceCreator;
 import eu.pb4.sgui.api.ClickType;
 import eu.pb4.sgui.api.elements.GuiElement;
 import eu.pb4.sgui.api.gui.SimpleGui;
@@ -20,20 +21,20 @@ import net.minecraft.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.OptionalInt;
 
 public class StonecutterGui extends SimpleGui {
     private static final int MAX_RECIPES = 3 * 3;
     private final StonecutterScreenHandler wrapped;
     private final List<GuiElement> recipeEntries = new ArrayList<>(16);
+    private final Text realTitle;
     private List<RecipeEntry<StonecuttingRecipe>> lastRecipes;
     private int page = 0;
 
     public StonecutterGui(Text text, StonecutterScreenHandler handler, ServerPlayerEntity player) {
         super(ScreenHandlerType.GENERIC_9X4, player, false);
         this.wrapped = handler;
-        this.setTitle(GuiTextures.STONECUTTER.apply(text));
+        this.realTitle = text;
         this.setSlotRedirect(9 + 1, this.wrapped.getSlot(0));
         this.setSlotRedirect(9 + 7, this.wrapped.getSlot(1));
 
@@ -52,6 +53,7 @@ public class StonecutterGui extends SimpleGui {
                 if (type.isLeft) {
                     GuiUtils.playClickSound(this.player);
                     this.wrapped.onButtonClick(this.player, finalI);
+                    this.updateRecipeDisplay();
                 }
             }));
         }
@@ -89,11 +91,15 @@ public class StonecutterGui extends SimpleGui {
 
         var max = this.wrapped.slots.get(0).getStack().isEmpty() ? 0 : Math.min(this.recipeEntries.size() - offset, MAX_RECIPES);
         int i = 0;
+        int[][] state = new int[3][3];
+
         for (; i < max; i++) {
             var x = i % 3;
             var y = i / 3;
             this.setSlot(x + y * 9 + 3, this.recipeEntries.get(i + offset));
+            state[x][y] = this.wrapped.getSelectedRecipe() == i + offset ? 2 : 1;
         }
+
 
         for (; i < MAX_RECIPES; i++) {
             var x = i % 3;
@@ -120,6 +126,26 @@ public class StonecutterGui extends SimpleGui {
         } else {
             this.clearSlot(9 * 3 + 5);
         }
+
+        var builder = new StringBuilder();
+        builder.append(GuiTextures.STONECUTTER_OFFSET);
+
+        for (int x = 0; x < 3; x++) {
+            for (int y = 0; y < 3; y++) {
+                switch (state[x][y]) {
+                    case 2 -> builder.append(GuiTextures.STONECUTTER_SELECTED_FONT[y]);
+                    case 1 -> builder.append(GuiTextures.STONECUTTER_BACKGROUND_FONT[y]);
+                    default -> builder.append(GuiTextures.POSITIVE_19);
+                }
+                builder.append(GuiTextures.NEGATIVE_19);
+            }
+            builder.append(GuiTextures.POSITIVE_18);
+        }
+        builder.append(GuiTextures.STONECUTTER_NEGATIVE);
+
+        this.setTitle(GuiTextures.STONECUTTER.apply(Text.empty()
+                .append(Text.literal(builder.toString()).setStyle(UiResourceCreator.STYLE))
+                .append(this.realTitle)));
     }
 
 
