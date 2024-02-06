@@ -7,7 +7,7 @@
     },
     {
       "type": "single",
-      "resource": "polyfactory:icon"
+      "resource": "minecraft:entity/enchanting_table_book"
     }
   ]
 }

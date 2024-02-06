@@ -1,0 +1,249 @@
+{
+	"texture_size": [64, 32],
+	"textures": {
+		"1": "entity/enchanting_table_book"
+	},
+	"elements": [
+		{
+			"name": "cover_left_rotation",
+			"from": [9.07574, 0, 8.38276],
+			"to": [15.07574, 10, 8.38276],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8.07574, 0, 8.38276]},
+			"faces": {
+				"north": {"uv": [5.5, 5, 4, 0], "texture": "#1"},
+				"east": {"uv": [4, 0, 4, 5], "texture": "#1"},
+				"south": {"uv": [5.5, 0, 7, 5], "texture": "#1"},
+				"west": {"uv": [5.5, 0, 5.5, 5], "texture": "#1"},
+				"up": {"uv": [5.5, 0, 4, 0], "texture": "#1"},
+				"down": {"uv": [7, 0, 5.5, 0], "texture": "#1"}
+			}
+		},
+		{
+			"name": "cover_right_rotation",
+			"from": [0.92426, 0, 8.38276],
+			"to": [6.92426, 10, 8.38276],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [7.92426, 0, 8.38276]},
+			"faces": {
+				"north": {"uv": [1.5, 5, 0, 0], "texture": "#1"},
+				"east": {"uv": [0, 0, 0, 5], "texture": "#1"},
+				"south": {"uv": [1.5, 0, 3, 5], "texture": "#1"},
+				"west": {"uv": [1.5, 0, 1.5, 5], "texture": "#1"},
+				"up": {"uv": [1.5, 0, 0, 0], "texture": "#1"},
+				"down": {"uv": [3, 0, 1.5, 0], "texture": "#1"}
+			}
+		},
+		{
+			"name": "spine_rotation",
+			"from": [7, 0, 8],
+			"to": [9, 10, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [3, 0, 3.5, 5], "texture": "#1"},
+				"east": {"uv": [3, 0, 3, 5], "texture": "#1"},
+				"south": {"uv": [3.5, 0, 4, 5], "texture": "#1"},
+				"west": {"uv": [3.5, 0, 3.5, 5], "texture": "#1"},
+				"up": {"uv": [3.5, 0, 3, 0], "texture": "#1"},
+				"down": {"uv": [4, 0, 3.5, 0], "texture": "#1"}
+			}
+		},
+		{
+			"name": "page_left_rotation",
+			"from": [8.5, 1, 6.9],
+			"to": [13.5, 9, 7.9],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [4.5, 9.5, 3.25, 5.5], "texture": "#1"},
+				"east": {"uv": [3, 5.5, 3.25, 9.5], "texture": "#1"},
+				"south": {"uv": [4.75, 5.5, 6, 9.5], "texture": "#1"},
+				"west": {"uv": [4.5, 5.5, 4.75, 9.5], "texture": "#1"},
+				"up": {"uv": [4.5, 5.5, 3.25, 5], "texture": "#1"},
+				"down": {"uv": [5.75, 5, 4.5, 5.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "page_right_rotation",
+			"from": [2.5, 1, 6.9],
+			"to": [7.5, 9, 7.9],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [3, 9.5, 1.75, 5.5], "texture": "#1"},
+				"east": {"uv": [0, 5.5, 0.25, 9.5], "texture": "#1"},
+				"south": {"uv": [1.75, 5.5, 3, 9.5], "texture": "#1"},
+				"west": {"uv": [1.5, 5.5, 1.75, 9.5], "texture": "#1"},
+				"up": {"uv": [1.5, 5.5, 0.25, 5], "texture": "#1"},
+				"down": {"uv": [2.75, 5, 1.5, 5.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "flip_left_rotation",
+			"from": [8.89203, 1, 6.75054],
+			"to": [13.89203, 9, 6.75054],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8.64203, 0, 8.10054]},
+			"faces": {
+				"north": {"uv": [7.25, 9, 6, 5], "texture": "#1"},
+				"east": {"uv": [6, 5, 6, 9], "texture": "#1"},
+				"south": {"uv": [7.25, 5, 8.5, 9], "texture": "#1"},
+				"west": {"uv": [7.25, 5, 7.25, 9], "texture": "#1"},
+				"up": {"uv": [7.25, 5, 6, 5], "texture": "#1"},
+				"down": {"uv": [8.5, 5, 7.25, 5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "flip_right_rotation",
+			"from": [2.00442, 1, 6.50054],
+			"to": [7.00442, 9, 6.50054],
+			"rotation": {"angle": -45, "axis": "y", "origin": [7.00442, 0, 8.10054]},
+			"faces": {
+				"north": {"uv": [8.5, 9, 7.25, 5], "texture": "#1"},
+				"east": {"uv": [6, 5, 6, 9], "texture": "#1"},
+				"south": {"uv": [7.25, 5, 8.5, 9], "texture": "#1"},
+				"west": {"uv": [7.25, 5, 7.25, 9], "texture": "#1"},
+				"up": {"uv": [7.25, 5, 6, 5], "texture": "#1"},
+				"down": {"uv": [8.5, 5, 7.25, 5], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [-33, 180, 0],
+			"translation": [0, 16, 0],
+			"scale": [3, 3, 2]
+		},
+		"head": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 13, 7]
+		},
+		"fixed": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "cover_left",
+			"origin": [15, 5, 8],
+			"color": 0,
+			"nbt": "{}",
+			"children": [
+				{
+					"name": "cover_left_rotation",
+					"origin": [12, 5, 8],
+					"color": 0,
+					"nbt": "{}",
+					"children": [0]
+				}
+			]
+		},
+		{
+			"name": "cover_right",
+			"origin": [1, 5, 8],
+			"color": 0,
+			"nbt": "{}",
+			"children": [
+				{
+					"name": "cover_right_rotation",
+					"origin": [4, 5, 8],
+					"color": 0,
+					"nbt": "{}",
+					"children": [1]
+				}
+			]
+		},
+		{
+			"name": "book_spine",
+			"origin": [8, 5, 8],
+			"color": 0,
+			"nbt": "{}",
+			"children": [
+				{
+					"name": "spine_rotation",
+					"origin": [8, 5, 8],
+					"color": 0,
+					"nbt": "{}",
+					"children": [2]
+				}
+			]
+		},
+		{
+			"name": "pages_left",
+			"origin": [13, 5, 6.925],
+			"color": 0,
+			"nbt": "{}",
+			"children": [
+				{
+					"name": "page_left_rotation",
+					"origin": [10.5, 5, 7.4],
+					"color": 0,
+					"nbt": "{}",
+					"children": [3]
+				}
+			]
+		},
+		{
+			"name": "pages_right",
+			"origin": [8, 5, 7.875],
+			"color": 0,
+			"nbt": "{}",
+			"children": [
+				{
+					"name": "page_right_rotation",
+					"origin": [5.5, 5, 7.4],
+					"color": 0,
+					"nbt": "{}",
+					"children": [4]
+				}
+			]
+		},
+		{
+			"name": "flipping_page_left",
+			"origin": [13, 5, 5.925],
+			"color": 0,
+			"nbt": "{}",
+			"children": [
+				{
+					"name": "flip_left_rotation",
+					"origin": [10.5, 5, 5.9],
+					"color": 0,
+					"nbt": "{}",
+					"children": [5]
+				}
+			]
+		},
+		{
+			"name": "flipping_page_right",
+			"origin": [8, 5, 5.875],
+			"color": 0,
+			"nbt": "{}",
+			"children": [
+				{
+					"name": "flip_right_rotation",
+					"origin": [5.5, 5, 5.9],
+					"color": 0,
+					"nbt": "{}",
+					"children": [6]
+				}
+			]
+		}
+	]
+}

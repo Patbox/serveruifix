@@ -133,8 +133,8 @@ public class StonecutterGui extends SimpleGui {
         for (int x = 0; x < 3; x++) {
             for (int y = 0; y < 3; y++) {
                 switch (state[x][y]) {
-                    case 2 -> builder.append(GuiTextures.STONECUTTER_SELECTED_FONT[y]);
-                    case 1 -> builder.append(GuiTextures.STONECUTTER_BACKGROUND_FONT[y]);
+                    case 2 -> builder.append(GuiTextures.STONECUTTER_SELECTED_BUTTON[y]);
+                    case 1 -> builder.append(GuiTextures.STONECUTTER_BACKGROUND_BUTTON[y]);
                     default -> builder.append(GuiTextures.POSITIVE_19);
                 }
                 builder.append(GuiTextures.NEGATIVE_19);

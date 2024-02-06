@@ -52,6 +52,11 @@ public class UiResourceCreator {
     private static final char CHEST_SPACE0 = character++;
     private static final char CHEST_SPACE1 = character++;
 
+    public static Supplier<GuiElementBuilder> custom(String path) {
+        var model = PolymerResourcePackUtils.requestModel (Items.ALLIUM, id("sgui/" + path));
+        return () -> new GuiElementBuilder(model.item()).setName(Text.empty()).hideFlags().setCustomModelData(model.value());
+    }
+
     public static Supplier<GuiElementBuilder> icon16(String path) {
         var model = genericIconRaw(Items.ALLIUM, path, BASE_MODEL);
         return () -> new GuiElementBuilder(model.item()).setName(Text.empty()).hideFlags().setCustomModelData(model.value());

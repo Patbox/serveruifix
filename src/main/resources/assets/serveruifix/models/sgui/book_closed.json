@@ -1,0 +1,60 @@
+{
+	"texture_size": [64, 32],
+	"textures": {
+		"1": "entity/enchanting_table_book"
+	},
+	"elements": [
+		{
+			"name": "cover_left_rotation",
+			"from": [5, 0, 8],
+			"to": [11, 10, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [4, 0, 5.5, 5], "texture": "#1"},
+				"east": {"uv": [4, 0, 4, 5], "texture": "#1"},
+				"south": {"uv": [7, 5, 5.5, 0], "texture": "#1"},
+				"west": {"uv": [5.5, 0, 5.5, 5], "texture": "#1"},
+				"up": {"uv": [5.5, 0, 4, 0], "texture": "#1"},
+				"down": {"uv": [7, 0, 5.5, 0], "texture": "#1"}
+			}
+		},
+		{
+			"name": "cover_left_rotation",
+			"from": [5, 0, 6],
+			"to": [11, 10, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [7, 0, 5.5, 5], "texture": "#1"},
+				"east": {"uv": [4, 0, 4, 5], "texture": "#1"},
+				"south": {"uv": [1.5, 5, 0, 0], "texture": "#1"},
+				"west": {"uv": [5.5, 0, 5.5, 5], "texture": "#1"},
+				"up": {"uv": [5.5, 0, 4, 0], "texture": "#1"},
+				"down": {"uv": [7, 0, 5.5, 0], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [-33, 180, 0],
+			"translation": [0, 16, 0],
+			"scale": [3, 3, 2]
+		}
+	},
+	"groups": [
+		{
+			"name": "cover_left",
+			"origin": [15, 5, 8],
+			"color": 0,
+			"nbt": "{}",
+			"children": [
+				{
+					"name": "cover_left_rotation",
+					"origin": [12, 5, 8],
+					"color": 0,
+					"nbt": "{}",
+					"children": [0, 1]
+				}
+			]
+		}
+	]
+}

@@ -80,6 +80,8 @@ dependencies {
 	//modImplementation include('alexiil.mc.lib:libnetworkstack-base:0.11.0-aaa.patbox')
 
 	modCompileOnly 'maven.modrinth:polydex:1.0.0+1.20.3-rc1'
+	modImplementation include('eu.pb4:map-canvas-api:0.2.2+1.19.4')
+
 
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
