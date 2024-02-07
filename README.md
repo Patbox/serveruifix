@@ -21,4 +21,4 @@ By default, mod is disabled and requires you to enable specific replacement in c
 }
 ```
 
-## [== Download on Modrinth ==](https://modrinth.com/mod/polyfactory)
+## [== Download on Modrinth ==](https://modrinth.com/mod/server-ui-fix)
