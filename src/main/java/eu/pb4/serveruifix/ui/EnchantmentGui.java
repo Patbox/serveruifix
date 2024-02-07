@@ -130,8 +130,8 @@ public class EnchantmentGui extends SimpleGui {
 
 
             for (int x = 0; x < 6; x++) {
-                var e = x == 0 ? (canEnchant ? GuiTextures.ENCHANTMENT_LEVEL[i] : GuiTextures.ENCHANTMENT_LEVEL_DISABLED[i]).get()
-                        : GuiElementBuilder.from(GuiTextures.EMPTY.getItemStack()).setName(name).setLore(lore).setCallback(action);
+                var e = (x == 0 ? (canEnchant ? GuiTextures.ENCHANTMENT_LEVEL[i] : GuiTextures.ENCHANTMENT_LEVEL_DISABLED[i]).get()
+                        : GuiElementBuilder.from(GuiTextures.EMPTY.getItemStack())).setName(name).setLore(lore).setCallback(action);
 
                 if (x == 5) {
                     e.setCount(power);
@@ -152,11 +152,6 @@ public class EnchantmentGui extends SimpleGui {
             // Text
             builder = new StringBuilder();
             var l = DefaultFonts.ALT.getTextWidth(string, 8) + 2;
-            System.out.println("==" + i);
-            System.out.println(string);
-            System.out.println(string.length());
-            System.out.println(l);
-            System.out.println(string.split(" ").length);
 
             for (; l >= 10; l -= 10) {
                 builder.append(GuiTextures.NEGATIVE_10);

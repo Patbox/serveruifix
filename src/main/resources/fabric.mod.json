@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Server UI Fix",
-  "description": "Replaces some UI's to make them work better on heavily modded servers targeting vanilla clients",
+  "description": "Replace guis to make them work better on heavily modded servers targeting vanilla clients!",
   "authors": [
     "Patbox"
   ],
@@ -14,7 +14,7 @@
   },
 
   "license": "LGPLv3",
-  "_icon": "assets/serveruifix/textures/icon.png",
+  "icon": "assets/serveruifix/textures/logo.png",
 
   "environment": "*",
   "entrypoints": {

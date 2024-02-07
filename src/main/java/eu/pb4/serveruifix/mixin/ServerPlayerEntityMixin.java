@@ -22,9 +22,9 @@ public class ServerPlayerEntityMixin {
     @Inject(method = "openHandledScreen", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/network/ServerPlayNetworkHandler;sendPacket(Lnet/minecraft/network/packet/Packet;)V", shift = At.Shift.BEFORE), cancellable = true)
     private void replaceScreenHandled(NamedScreenHandlerFactory factory, CallbackInfoReturnable<OptionalInt> cir, @Local ScreenHandler handler) {
         var player = (ServerPlayerEntity) (Object) this;
-        if (handler instanceof StonecutterScreenHandler screenHandler && !(ModInit.DEV_MODE && player.getMainHandStack().isOf(Items.DEBUG_STICK)) ) {
+        if (ModInit.config.stonecutter && handler instanceof StonecutterScreenHandler screenHandler && !(ModInit.DEV_MODE && player.getMainHandStack().isOf(Items.DEBUG_STICK)) ) {
             cir.setReturnValue(new StonecutterGui(factory.getDisplayName(), screenHandler, player).openWithNumber());
-        } else if (handler instanceof EnchantmentScreenHandler screenHandler && !(ModInit.DEV_MODE && player.getMainHandStack().isOf(Items.DEBUG_STICK)) ) {
+        } else if (ModInit.config.enchanting && handler instanceof EnchantmentScreenHandler screenHandler && !(ModInit.DEV_MODE && player.getMainHandStack().isOf(Items.DEBUG_STICK)) ) {
             cir.setReturnValue(new EnchantmentGui(factory.getDisplayName(), screenHandler, player).openWithNumber());
         }
     }
