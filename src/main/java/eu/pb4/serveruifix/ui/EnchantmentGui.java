@@ -164,7 +164,7 @@ public class EnchantmentGui extends SimpleGui {
 
         builder.append(GuiTextures.ENCHANTMENT_NEGATIVE);
         text.append(Text.literal(builder.toString()).setStyle(UiResourceCreator.STYLE));
-        this.setSlot(9 + 1, (hasEnchantment ? GuiTextures.BOOK_OPEN : GuiTextures.BOOK_CLOSED).get().setName(Text.empty()));
+        this.setSlot(9 + 1, (hasEnchantment ? GuiTextures.BOOK_OPEN : GuiTextures.BOOK_CLOSED).get().hideTooltip());
         this.setTitle(GuiTextures.ENCHANTMENT.apply(text.append(this.realTitle)));
     }
 
