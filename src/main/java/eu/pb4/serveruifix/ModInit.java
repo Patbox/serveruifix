@@ -25,7 +25,7 @@ public class ModInit implements ModInitializer {
 	public static FixConfig config = FixConfig.loadOrCreateConfig();
 
     public static Identifier id(String path) {
-		return new Identifier(ID, path);
+		return Identifier.of(ID, path);
 	}
 
 	@Override

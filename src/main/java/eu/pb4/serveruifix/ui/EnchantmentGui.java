@@ -11,6 +11,8 @@ import eu.pb4.sgui.api.elements.GuiElementInterface;
 import eu.pb4.sgui.api.gui.SimpleGui;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.screen.EnchantmentScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.ScreenTexts;
@@ -21,6 +23,7 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.collection.IndexedIterable;
 
 import java.util.*;
 
@@ -77,6 +80,7 @@ public class EnchantmentGui extends SimpleGui {
         var builder = new StringBuilder();
         builder.append(GuiTextures.ENCHANTMENT_OFFSET);
         EnchantingPhrases.getInstance().setSeed((long)this.wrapped.getSeed());
+        var indexedIterable = player.getRegistryManager().get(RegistryKeys.ENCHANTMENT).getIndexedEntries();
 
         for (int i = 0; i < 3; i++) {
             if (this.lastEnchantmentId[i] == -1 || this.lastEnchantmentPower[i] == 0) {
@@ -93,11 +97,16 @@ public class EnchantmentGui extends SimpleGui {
                     this.wrapped.onButtonClick(this.player, finalI);
                 }
             };
-            var enchantment = Enchantment.byRawId(this.lastEnchantmentId[i]);
+
+
+            var enchantment = indexedIterable.get(this.lastEnchantmentId[i]);
+            if (enchantment == null) {
+                continue;
+            }
             int power = this.lastEnchantmentPower[i];
             int level = this.lastEnchantmentLevel[i];
 
-            var name = Text.translatable("container.enchant.clue", enchantment.getName(level)).formatted(Formatting.WHITE);
+            var name = Text.translatable("container.enchant.clue", Enchantment.getName(enchantment, level)).formatted(Formatting.WHITE);
 
             var lore = new ArrayList<Text>();
             int place = i + 1;
